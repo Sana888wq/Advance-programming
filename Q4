@@ -1,0 +1,22 @@
+from abc import ABC, abstractmethod
+
+class MessageSender(ABC):
+    @abstractmethod
+    def send(self, message): pass
+
+class EmailSender(MessageSender):
+    def send(self, message):
+        print(f"Sending Email: {message}")
+
+class SMSSender(MessageSender):
+    def send(self, message):
+        print(f"Sending SMS: {message}")
+
+class Notifier:
+    def __init__(self, sender: MessageSender):
+        self.sender = sender
+    def notify(self, msg):
+        self.sender.send(msg)
+
+Notifier(EmailSender()).notify("Hello")
+Notifier(SMSSender()).notify("Hello")
