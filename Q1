@@ -1,0 +1,18 @@
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+    def __init__(self, name, emp_id):
+        self.name = name
+        self.emp_id = emp_id
+    
+    @abstractmethod
+    def work(self):
+        pass
+
+class Teacher(Employee):
+    def work(self):
+        print(f"Teacher {self.name} is teaching students.")
+
+class Administrator(Employee):
+    def work(self):
+        print(f"Administrator {self.name} is managing university affairs.")
