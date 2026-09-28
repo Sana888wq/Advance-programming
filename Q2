@@ -1,0 +1,9 @@
+from q1_abstraction import Teacher, Administrator
+
+employees = [
+    Teacher("Ali", 101),
+    Administrator("Ahmed", 102)
+]
+
+for emp in employees:
+    emp.work()
