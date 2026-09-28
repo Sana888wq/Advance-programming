@@ -1,0 +1,13 @@
+class Address:
+    def __init__(self, city, street):
+        self.city = city
+        self.street = street
+
+class Student:
+    def __init__(self, name, address):
+        self.name = name
+        self.address = address
+
+addr = Address("Peshawar", "University Road")
+std = Student("Khan", addr)
+print(f"{std.name} lives in {std.address.city}")
